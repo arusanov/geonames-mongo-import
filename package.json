@@ -1,0 +1,41 @@
+{
+  "name": "geonames-import",
+  "version": "0.0.1",
+  "main": "lib/geonames-import.js",
+  "description": "convert data from geonames.org csv to mongodb json import file.",
+  "homepage": "arusanov/geonames-mongo-import",
+  "bugs": "arusanov/geonames-mongo-import/issues",
+  "author": {
+    "name": "",
+    "email": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "arusanov/geonames-mongo-import"
+  },
+  "license": "MIT",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "geonames-import",
+    ""
+  ],
+  "devDependencies": {
+    "csv": "^0.4.0",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-nodeunit": "^0.3.3",
+    "grunt-contrib-watch": "^0.6.1",
+    "jshint-stylish": "^0.2.0",
+    "load-grunt-tasks": "^0.4.0",
+    "time-grunt": "^0.3.1",
+    "underscore": "^1.6.0"
+  },
+  "scripts": {
+    "test": "grunt"
+  },
+  "bin": {
+    "geonames-import": "cli.js"
+  },
+  "preferGlobal": "true"
+}
