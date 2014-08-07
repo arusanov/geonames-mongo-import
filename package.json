@@ -22,13 +22,15 @@
     ""
   ],
   "devDependencies": {
-    "csv": "^0.4.0",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-nodeunit": "^0.3.3",
     "grunt-contrib-watch": "^0.6.1",
     "jshint-stylish": "^0.2.0",
     "load-grunt-tasks": "^0.4.0",
-    "time-grunt": "^0.3.1",
+    "time-grunt": "^0.3.1"
+  },
+  "dependencies":{
+    "csv": "^0.4.0",
     "underscore": "^1.6.0"
   },
   "scripts": {
