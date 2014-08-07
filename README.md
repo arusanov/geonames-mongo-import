@@ -12,6 +12,10 @@ npm install arusanov/geonames-mongo-import -g
 cat test/data/cities15000.txt | geonames-import > import.json
 mongoimport -h <host> -d <db> -c <collection> -u <user> -p <password> --file import.json
 ```
+Then you can use reverse geocoding like this
+```js
+db.collection.find({loc:{$near:[-118.427188,33.984008]}}).limit(1)
+```
 
 ## Structure
 ```js
