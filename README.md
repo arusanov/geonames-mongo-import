@@ -1,44 +1,34 @@
-# geonames-import [![Build Status](https://secure.travis-ci.org//geonames-import.png?branch=master)](http://travis-ci.org//geonames-import)
+# geonames-import
 
-> The best module ever.
+Imports from geonames.org csv main 'geoname' table to mongodb export format
+so it can be imported into mongodb later.
+Useful for geocoding and reverse geocoding.
+Latest geo dumps: http://download.geonames.org/export/dump/
 
+## Example
 
-## Getting Started
-
-Install the module with: `npm install geonames-import`
-
-```js
-var geonames-import = require('geonames-import');
-geonames-import.awesome(); // "awesome"
+```shell
+cat test/data/cities15000.txt | node cli.js > import.json
+mongoimport -h <host> -d <db> -c <collection> -u <user> -p <password> --file import.json
 ```
 
-Install with cli command
-
-```sh
-$ npm install -g geonames-import
-$ geonames-import --help
-$ geonames-import --version
+## Structure
+```json
+{
+_id: ObjectId,
+name: string,
+alternatenames: [string],
+loc: {
+    type:'Point',
+    coordinates:[lon,lat]
+}
+feature_class: string,
+feature_code: string,
+country_code: string,
+population: int,
+timezone: string,
+offset_gmt: int,
+offset_dst: int,
+offset_raw: int
+}
 ```
-
-
-
-
-## Documentation
-
-_(Coming soon)_
-
-
-## Examples
-
-_(Coming soon)_
-
-
-## Contributing
-
-In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com).
-
-
-## License
-
-Copyright (c) 2014   
-Licensed under the MIT license.
